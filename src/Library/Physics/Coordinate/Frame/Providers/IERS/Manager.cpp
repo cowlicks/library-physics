@@ -935,6 +935,8 @@ File                            Manager::fetchLatestBulletinA_              ( )
 
         this->lockLocalRepository(localRepositoryLockTimeout_) ;
 
+        std::cout << String::Format("Fetching IERS Bulletin A [{}]...", remoteUrl.toString()) << std::endl ;
+
         latestBulletinAFile = Client::Fetch(remoteUrl, temporaryDirectory) ;
 
         // [TBI] Add file size verification
@@ -1017,6 +1019,8 @@ File                            Manager::fetchLatestFinals2000A_            ( )
     {
 
         this->lockLocalRepository(localRepositoryLockTimeout_) ;
+
+        std::cout << String::Format("Fetching IERS Finals 2000A [{}]...", remoteUrl.toString()) << std::endl ;
 
         latestFinals2000AFile = Client::Fetch(remoteUrl, temporaryDirectory) ;
 

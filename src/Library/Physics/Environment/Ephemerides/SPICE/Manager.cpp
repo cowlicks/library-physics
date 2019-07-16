@@ -88,6 +88,8 @@ void                            Manager::fetchKernel                        (   
 
     const URL remoteUrl = index_.getRemoteUrlOfKernel(aKernel) ;
 
+    std::cout << String::Format("Fetching SPICE kernel [{}]...", remoteUrl.toString()) << std::endl ;
+
     const File fetchedKernelFile = Client::Fetch(remoteUrl, localRepository_) ;
 
     // [TBI] Add file size verification
@@ -115,6 +117,8 @@ Array<Kernel>                   Manager::fetchMatchingKernels               (   
 
         for (const auto& remoteUrl : index_.findRemoteUrls(aRegex))
         {
+
+            std::cout << String::Format("Fetching SPICE kernel [{}]...", remoteUrl.toString()) << std::endl ;
 
             const File fetchedKernelFile = Client::Fetch(remoteUrl, localRepository_) ;
 
